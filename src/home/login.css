@@ -1,0 +1,98 @@
+.welcome {
+  position: absolute;
+  top: 40vh;
+  left: 20vw;
+  color: white;
+  font-size: 10vh;
+  transform: translate(-50%, -50%);
+}
+.welcome1 {
+  color: whitesmoke;
+  display: block;
+  font-size: large;
+}
+.welcome:hover {
+  animation-name: bubble;
+  animation-duration: 4s;
+}
+@keyframes bubble {
+  0% {
+    background-color: rgba(240, 248, 255, 0.26);
+    border-radius: 20px;
+    padding: 5px;
+  }
+  30% {
+    background-color: rgba(16, 112, 196, 0.315);
+    border-radius: 100%;
+    padding: 100px;
+  }
+}
+/* transform: translate(-50%, -50%);*/
+.cover {
+  display: block;
+  overflow: hidden;
+  width: 10%;
+  height: 100vh;
+  position: relative;
+  animation-name: run;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+}
+@keyframes run {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.login99 {
+  background-color: rgba(101, 164, 219, 0.363);
+  border-radius: 20px;
+  width: 30%;
+  height: 30vh;
+  position: absolute;
+  top: 50%;
+  right: 5vw;
+  transform: translate(0px, -50%);
+}
+.icongoogle {
+  background-image: url("./googleicon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+.login996 {
+  vertical-align: 10px;
+  font-weight: bold;
+}
+h4 {
+  color: whitesmoke;
+}
+.login998 {
+  font-size: x-large;
+  font-weight: bolder;
+  padding: 20px 40px;
+  display: block;
+  color: whitesmoke;
+}
+.login995 {
+  background-color: rgba(250, 235, 215, 0);
+  padding: 10px;
+  position: absolute;
+  top: 40%;
+  color: whitesmoke;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  font-size: large;
+  display: block;
+  border-radius: 20px;
+}
+.login995:hover {
+  background-color: rgba(12, 187, 70, 0.329);
+}
