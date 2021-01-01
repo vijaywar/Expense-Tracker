@@ -35,10 +35,10 @@ class Login extends Component {
 
                         </div>
                     </Route>
-
-
                 </Switch>
-
+                {
+                    this.props.auth.displayName === undefined ? (null) : (<Redirect to='/home' />)
+                }
             </div>
         )
     }

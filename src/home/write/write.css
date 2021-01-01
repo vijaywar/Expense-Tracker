@@ -1,0 +1,115 @@
+.writek {
+  background-color: rgba(33, 194, 194, 0.205);
+  display: block;
+  width: 98%;
+  height: 38vh;
+  padding: 12px;
+  font-size: large;
+  box-shadow: 3px 3px rgba(31, 31, 31, 0.212);
+  color: whitesmoke;
+  border-radius: 12px;
+  transition-duration: 0.5s;
+}
+.writek:hover {
+  background-color: rgba(0, 0, 0, 0.616);
+}
+.writek:focus {
+  background-color: rgba(0, 0, 0, 0.616);
+}
+.dp {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.barname,
+.baremail {
+  display: block;
+  color: whitesmoke;
+  padding: 5px 15px;
+  margin: 15px;
+  padding-top: 0px;
+  font-size: large;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.616);
+  transition-duration: 1s;
+}
+/*  background-color: rgba(250, 235, 215, 0.356);*/
+.barname:hover,
+.baremail:hover {
+  color: black;
+  font-weight: bold;
+  background-color: rgba(250, 235, 215, 0.308);
+}
+.barbasic {
+  display: inline-block;
+  vertical-align: 20px;
+}
+.bartab {
+  display: inline-block;
+  padding: 10px;
+}
+
+.savebtn {
+  float: right;
+  padding: 5px;
+  width: 100px;
+  margin: 10px;
+  background-color: rgba(3, 3, 71, 0.384);
+  color: whitesmoke;
+  font-size: large;
+}
+.savebtn:hover {
+  background-color: rgba(3, 71, 14, 0.384);
+}
+
+/*..................*/
+.preview {
+  background-color: rgba(33, 194, 194, 0.205);
+  display: block;
+  width: 90%;
+  margin-top: 2px;
+  height: 12vh;
+  padding: 12px;
+  font-size: large;
+  box-shadow: 3px 3px rgba(31, 31, 31, 0.212);
+  color: whitesmoke;
+  border-radius: 12px;
+  overflow: hidden;
+  transition-duration: 0.5s;
+}
+.preview:hover {
+  background-color: rgba(0, 0, 0, 0.616);
+}
+.previsual {
+  height: 9vh;
+  display: block;
+}
+.pretime {
+  height: 2vh;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: salmon;
+  float: right;
+  margin-top: 1vh;
+  display: block;
+}
+.preframe {
+  overflow: scroll;
+  height: 40vh;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.4);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 108, 248);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(7, 30, 241);
+}

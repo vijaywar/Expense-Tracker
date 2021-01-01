@@ -96,3 +96,78 @@ h4 {
 .login995:hover {
   background-color: rgba(12, 187, 70, 0.329);
 }
+
+/* .....................................*/
+.card {
+  padding: 2%;
+  background-color: rgba(240, 248, 255, 0.267);
+  display: block;
+  width: 70vw;
+  min-width: 800px;
+  height: 70vh;
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bar {
+  position: absolute;
+  top: 2vh;
+  width: 90%;
+  height: 10vh;
+  min-height: 120px;
+
+  margin: 2px 3%;
+  display: block;
+  border-radius: 20px;
+  border: 8px solid rgba(34, 2, 2, 0.137);
+  background-color: rgba(0, 255, 255, 0.041);
+}
+.write {
+  position: absolute;
+  top: 18vh;
+  width: 60%;
+  padding: 10px;
+  height: 40vh;
+  min-height: 40px;
+  margin: 2px 3%;
+  display: inline-block;
+  border-radius: 20px;
+  border: 8px solid rgba(34, 2, 2, 0.137);
+  border-right: 0px;
+  border-bottom: 0px;
+  background-color: rgba(47, 0, 255, 0.041);
+  border-top-right-radius: 0px;
+}
+.previous {
+  position: absolute;
+  top: 18vh;
+  left: 67%;
+  width: 27%;
+
+  height: 40vh;
+  min-height: 40px;
+  margin: 2px 3%;
+  display: inline-block;
+  border-radius: 20px;
+  border: 8px solid rgba(34, 2, 2, 0.137);
+  border-left: 0px;
+  background-color: rgba(47, 0, 255, 0.041);
+  border-top-left-radius: 0px;
+  border-bottom: 0px;
+}
+.time {
+  float: right;
+  padding: 2vw;
+  font-size: xx-large;
+  color: rgba(0, 0, 0, 0.616);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bolder;
+}
+/* rgba(1, 23, 27, 0.479);*/
+.mill {
+  font-size: x-large;
+  width: 100px;
+  display: inline-block;
+}
