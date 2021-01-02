@@ -8,7 +8,7 @@ import Bar from './write/Bar'
 import Prev from './write/Prev'
 class Home extends Component {
     state = {
-        date: Date(), data: '', hr: '', min: '', sec: '', mil: ''
+        date: Date(), data: '', hr: '', min: '', sec: '', mil: '', story: '', idata: ''
     }
     date = () => {
         var hr, min, sec, mil;
@@ -22,10 +22,21 @@ class Home extends Component {
     componentDidMount = () => {
         setInterval(this.date, 1000)
     }
+    logout = () => {
+        this.props.firebase.logout()
+        this.props.history.push('/');
+    }
+    show = (i, e) => {
+        this.setState({ story: i.stroy, idata: i.date })
+    }
     render() {
 
 
         if (this.props.aka) {
+            var dataset = [...this.props.aka[0].diary];
+            dataset.sort((a, b) => {
+                return b.date - a.date;
+            });
             return (
                 <div>
                     <div className='card' >
@@ -34,12 +45,27 @@ class Home extends Component {
                             <span className='time'>{this.state.hr}:{this.state.min}:{this.state.sec} . <span className='mill'>{this.state.mil}</span> </span>
                         </div>
                         <div className='write'>
-                            <Write auth={this.props.auth} />
+                            {this.state.story !== '' ?
+                                <Write auth={this.props.auth} story={this.state.story} date={this.state.idata} /> :
+                                <Write auth={this.props.auth} />}
+
                         </div>
                         <div className='previous'>
-                            <Prev data={this.props.aka[0].diary} />
+                            {this.props.aka[0] ?
+                                <div className='preframe'>
+                                    {dataset.map(i =>
+                                        <div key={i.date} onClick={this.show.bind(this, i)} className='preview'>
+                                            <div className='previsual'>{i.stroy.slice(55, 150)}</div>
+                                            <div className='pretime'>{new Date(i.date).toLocaleDateString("en-US")}</div>
+                                        </div>
+
+                                    )}
+                                </div>
+                                : <Prev />}
                         </div>
+                        <div className='logout'><button className='logoutbtn' onClick={this.logout}>Logout</button></div>
                     </div>
+
                 </div>
             )
         }

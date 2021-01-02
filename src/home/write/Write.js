@@ -6,22 +6,21 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 class Write extends Component {
     state = {
-        story: new Date()
+        date: '', paycut: '', da: '', story: new Date()
     }
     onch = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
+    new = () => {
+        this.setState({ story: new Date(), date: '' })
+    }
     updstory = () => {
-
-
         const { firestore } = this.props;
         if (this.props.aka[0]) {
             const news = {
                 'diary': [{
-                    doc: this.props.auth.uid,
-                    id: this.props.auth.uid,
+
                     stroy: this.state.story,
-                    email: this.props.auth.email,
                     date: new Date().getTime()
                 }, ...this.props.aka[0].diary]
             }
@@ -30,10 +29,7 @@ class Write extends Component {
         else {
             const news = {
                 'diary': [{
-                    doc: this.props.auth.uid,
-                    id: this.props.auth.uid,
                     stroy: this.state.story,
-                    email: this.props.auth.email,
                     date: new Date().getTime()
                 }]
             }
@@ -41,15 +37,44 @@ class Write extends Component {
                 alert('success');
             });
         }
+    }
+    updel = () => {
+        const { firestore } = this.props;
+        const news = this.props.aka[0].diary.filter(i => i.date !== this.state.date);
+        firestore.update({ collection: 'flash', doc: this.props.auth.uid }, news).then(() => alert('Updated'))
+    }
+    updold = () => {
+        const { firestore } = this.props;
+        const news = this.props.aka[0].diary.filter(i => i.date !== this.state.date);
+        var newsupd = {
+            'diary': [{
+                stroy: this.state.story,
+                date: this.state.date
+            }, ...news]
+        }
+        firestore.update({ collection: 'flash', doc: this.props.auth.uid }, newsupd).then(() => alert('Updated'))
+    }
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (nextProps.story) {
+            if (nextProps.story != prevState.paycut) {
 
+                return { story: nextProps.story, paycut: nextProps.story, date: nextProps.date }
+            }
+        }
 
-
+        else { return null }
     }
     render() {
+
         return (
             <div>
                 <textarea name='story' onChange={this.onch} value={this.state.story} className='writek' placeholder='Write your feelings...'></textarea>
-                <button className='savebtn' onClick={this.updstory}>Save</button>
+                {this.state.date == '' ? <button className='savebtn' onClick={this.updstory}>Save</button> :
+                    <span>  <button className='addbtn' onClick={this.new}>Open New</button>
+
+                        <button className='savebtn' onClick={this.updold}>Update</button>
+                        <button className='savebtn' onClick={this.updel}>Delete</button></span>}
+
             </div>
         )
     }

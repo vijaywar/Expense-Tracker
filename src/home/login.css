@@ -171,3 +171,68 @@ h4 {
   width: 100px;
   display: inline-block;
 }
+.logout {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.logoutbtn {
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.616);
+  color: white;
+}
+.logoutbtn:hover {
+  background-color: salmon;
+}
+/*Mobile......................................................*/
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+    min-width: 300px;
+    transform: none;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    left: 0px;
+    position: relative;
+  }
+
+  .bar {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+  }
+  .write {
+    top: 0%;
+    width: 95%;
+    border: none;
+    padding: 0px;
+    position: relative;
+    margin: 0px;
+    margin-top: 50px;
+  }
+  .previous {
+    position: relative;
+    top: 0px;
+    display: block;
+    left: 0px;
+    width: 95vw;
+    margin: 2vw;
+    border-radius: 5px;
+    padding: 5px;
+    height: 20vh;
+    overflow: scroll;
+    background-color: aliceblue;
+  }
+  .time {
+    float: none;
+    text-align: right;
+    display: block;
+    position: relative;
+    padding: 2px;
+    font-size: xx-large;
+    color: rgba(0, 0, 0, 0.616);
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bolder;
+  }
+}
