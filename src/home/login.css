@@ -110,6 +110,19 @@ h4 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: cardmove;
+  animation-duration: 5s;
+}
+@keyframes cardmove {
+  0% {
+    opacity: 0;
+    width: 100px;
+  }
+
+  100% {
+    width: 70vw;
+    opacity: 1;
+  }
 }
 .bar {
   position: absolute;
@@ -146,7 +159,7 @@ h4 {
   left: 67%;
   width: 27%;
 
-  height: 40vh;
+  height: 48vh;
   min-height: 40px;
   margin: 2px 3%;
   display: inline-block;
@@ -186,24 +199,82 @@ h4 {
 }
 /*Mobile......................................................*/
 @media screen and (max-width: 500px) {
+  .welcome {
+    position: absolute;
+    top: 15vh;
+    left: 50%;
+    color: white;
+    font-size: 7vh;
+    transform: translate(-50%, -50%);
+  }
+
+  .cover {
+    display: block;
+    overflow: hidden;
+    width: 10%;
+    height: 100vh;
+    position: relative;
+    animation-name: run;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes run {
+    0% {
+      width: 10%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  .login99 {
+    width: 70%;
+    left: 50%;
+    color: white;
+    min-width: 300px;
+    font-size: 10vh;
+    transform: translate(-50%, -50%);
+  }
+  .login998 {
+    font-size: large;
+  }
+  .login995 {
+    margin-top: 10px;
+  }
   .card {
     width: 100%;
     min-width: 300px;
     transform: none;
-    height: 100vh;
+    height: 150vh;
     padding: 0px;
-    margin: 0px;
+    margin: auto;
     left: 0px;
     position: relative;
+    animation: cardmoves;
+    animation-duration: 5s;
+    overflow: hidden;
   }
+  @keyframes cardmoves {
+    0% {
+      opacity: 0;
+      width: 100px;
+      height: 20px;
+    }
 
+    100% {
+      width: 100vw;
+      height: 150vh;
+      opacity: 1;
+    }
+  }
   .bar {
     padding: 0px;
     margin: 0px;
+    background-color: rgba(0, 255, 255, 0.336);
+    min-width: 320px;
     position: relative;
   }
   .write {
-    top: 0%;
+    top: 2%;
     width: 95%;
     border: none;
     padding: 0px;
@@ -213,7 +284,7 @@ h4 {
   }
   .previous {
     position: relative;
-    top: 0px;
+    top: 10%;
     display: block;
     left: 0px;
     width: 95vw;
@@ -222,17 +293,25 @@ h4 {
     padding: 5px;
     height: 20vh;
     overflow: scroll;
-    background-color: aliceblue;
+    margin-top: 50px;
   }
   .time {
     float: none;
     text-align: right;
     display: block;
     position: relative;
-    padding: 2px;
+    padding: 4px;
     font-size: xx-large;
     color: rgba(0, 0, 0, 0.616);
     font-family: "Times New Roman", Times, serif;
     font-weight: bolder;
+  }
+  .logout {
+    position: absolute;
+    bottom: 80px;
+    right: 10px;
+  }
+  .writektime {
+    background-color: aliceblue;
   }
 }

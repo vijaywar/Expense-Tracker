@@ -1,0 +1,105 @@
+.deck {
+  position: absolute;
+  width: 60vw;
+  height: 40vh;
+  top: 50vh;
+  left: 52vw;
+  max-width: 500px;
+  background-color: rgba(3, 53, 97, 0.356);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  transition-duration: 4s;
+  animation: dpplay;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dpplay {
+  0% {
+    opacity: 0;
+    margin-top: 50vh;
+    left: 0vw;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  100% {
+    margin-top: 0px;
+    opacity: 1;
+    left: 52vw;
+  }
+}
+
+.userdp {
+  position: relative;
+  height: 80%;
+  max-width: 200px;
+  max-height: 200px;
+  margin: auto;
+  width: 80%;
+  border: 10px solid rgba(32, 1, 1, 0.11);
+  border-radius: 100%;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+}
+.dpname {
+  display: block;
+  font-size: x-large;
+  color: whitesmoke;
+}
+.inputdp {
+  text-align: center;
+  padding: 10px;
+  display: block;
+}
+.inputpas {
+  padding: 8px;
+  color: aliceblue;
+  font-size: medium;
+  background-color: rgba(245, 245, 245, 0.164);
+}
+.inputpas::placeholder {
+  color: aliceblue;
+}
+.arrowdp {
+  background-color: rgba(245, 245, 245, 0.164);
+  color: whitesmoke;
+  width: 40px;
+  display: inline-block;
+  vertical-align: -15px;
+  transition-duration: 1s;
+}
+.arrowdp:hover {
+  background-color: rgba(245, 245, 245, 0.555);
+}
+.btndp {
+  padding: 8px 80px;
+  color: aliceblue;
+  font-size: medium;
+  background-color: rgba(245, 245, 245, 0.164);
+}
+.btndp:hover {
+  background-color: seagreen;
+}
+@media screen and (max-width: 500px) {
+  .deck {
+    top: 30vh;
+  }
+  .inputdp {
+    display: inline-flex;
+  }
+  .inputpas {
+    display: inline-block;
+  }
+  .arrowdp {
+    display: inline-block;
+    background-color: rgba(240, 248, 255, 0.432);
+  }
+  .arrowdp:hover {
+    background-color: rgba(36, 252, 47, 0.432);
+  }
+}

@@ -26,7 +26,7 @@ class Login extends Component {
                     <Route exact path='/'>
                         <span className='cover'>
                             <h1 className='welcome'>Welcome!
-                    <h2 className='welcome1'>Write your Story...</h2> </h1>
+                    <div className='welcome1'>Write your Story...</div> </h1>
 
                         </span>
                         <div className='login99'>
