@@ -1,5 +1,5 @@
 .deck {
-  position: absolute;
+  position: relative;
   width: 60vw;
   height: 40vh;
   top: 50vh;
@@ -85,21 +85,60 @@
 .btndp:hover {
   background-color: seagreen;
 }
+
+.logohome {
+  display: block;
+  width: 100px;
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  transition-duration: 3s;
+}
+.logohome:hover {
+  display: block;
+  background-color: rgba(0, 39, 39, 0.185);
+  padding: 50px;
+
+  rotate: 360deg;
+}
+
 @media screen and (max-width: 500px) {
   .deck {
     top: 30vh;
   }
   .inputdp {
-    display: inline-flex;
+    display: inline-block;
   }
   .inputpas {
-    display: inline-block;
+    display: block;
+    margin-left: -10%;
   }
   .arrowdp {
-    display: inline-block;
-    background-color: rgba(240, 248, 255, 0.432);
+    width: 80px;
+    margin: auto;
+    margin-left: -10%;
+    margin-top: 20px;
+    height: 40px;
+    display: block;
+    vertical-align: baseline;
+    transition-duration: 1s;
+    background-color: rgba(255, 240, 240, 0.432);
+  }
+  .mobilehelp {
+    display: block;
   }
   .arrowdp:hover {
     background-color: rgba(36, 252, 47, 0.432);
+  }
+  .logohome {
+    display: block;
+    width: 100px;
+    position: relative;
+    left: 50%;
+
+    margin-top: 120%;
+    transform: translate(-50%, -50%);
+    transition-duration: 3s;
   }
 }

@@ -8,6 +8,7 @@ import Bar from './write/Bar'
 import Prev from './write/Prev'
 import './home.css'
 import Decrypt from './write/Decrypt'
+import img from '../coolplus.png'
 var CryptoJS = require("crypto-js")
 class Home extends Component {
     state = {
@@ -88,6 +89,7 @@ class Home extends Component {
             }
             return (
                 <div>
+
                     {this.state.done ?
                         <div className='card' >
                             <div className='bar'>
@@ -124,7 +126,7 @@ class Home extends Component {
 
                             {this.props.aka[0] ? <span className='inputdp'>
                                 <input name='password' onKeyPress={this.handleKeypress.bind(this)} onChange={this.onchange} value={this.state.password} placeholder='Password..' className='inputpas' type="password" />
-                                <span onClick={this.passwordcheck}><img className='arrowdp' src="https://firebasestorage.googleapis.com/v0/b/dear-diary-hi.appspot.com/o/lar.png?alt=media&token=0715872f-8550-4092-8a7e-330a5c7e923d" alt="S" /></span>
+                                <span className='mobilehelp' onClick={this.passwordcheck}><img className='arrowdp' src="https://firebasestorage.googleapis.com/v0/b/dear-diary-hi.appspot.com/o/lar.png?alt=media&token=0715872f-8550-4092-8a7e-330a5c7e923d" alt="S" /></span>
                             </span> :
                                 <span>
                                     <span className='inputdp'><input name='password' value={this.state.password} onChange={this.onchange} placeholder='New Password..' className='inputpas' type="password" /></span>
@@ -132,11 +134,15 @@ class Home extends Component {
                                     <button onClick={this.setpassword} className='btndp'>Submit</button></span>}
                         </div>
                     }
+                    <img src={img} alt="TIme" className='logohome' />
                 </div>
             )
         }
         else {
-            return (<h1>Loading...</h1>)
+            return (
+                <div><h1>Loading...
+            </h1>
+                    <img className='imglogo' src={img} alt="Time" /></div>)
         }
     }
 }
