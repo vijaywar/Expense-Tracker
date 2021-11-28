@@ -1,10 +1,11 @@
-import './App.css';
+import './styles/App.css';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
 import { createFirestoreInstance } from 'redux-firestore'
-import store from './store'
+import store from './BackEnd/store'
 import { Provider } from 'react-redux';
 import firebase from 'firebase/app'
 import Login from './home/Login'
+import Home from './FrontEnd/Home'
 import { BrowserRouter as Router } from 'react-router-dom'
 function App() {
   const rrfConfig = {
@@ -23,7 +24,7 @@ function App() {
 
         <div className='body'>
           <Router>
-            <Login />
+            <Home />
           </Router>
 
         </div>

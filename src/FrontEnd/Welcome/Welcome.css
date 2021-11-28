@@ -1,0 +1,70 @@
+.FlexGrid {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.Welcome {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  background-color: rgba(245, 245, 220, 0.177);
+  padding: 50px;
+  color: aliceblue;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+.Animation,
+.AnimationR {
+  display: block;
+  position: absolute;
+  top: 0px;
+  font-size: 500px;
+  left: 0px;
+  color: white;
+  z-index: -1;
+  animation-name: welc;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+@keyframes welc {
+  0% {
+    top: 0px;
+    left: 50px;
+  }
+  50% {
+    top: 1000px;
+    left: 50px;
+  }
+  100% {
+    top: 0px;
+    left: 50px;
+  }
+}
+.WelcText {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+.AnimationR {
+  transform: rotate(180deg);
+  animation-name: welcR;
+}
+
+@keyframes welcR {
+  0% {
+    bottom: 0px;
+    right: 50px;
+  }
+  50% {
+    bottom: 1000px;
+    left: 50px;
+  }
+  100% {
+    bottom: 0px;
+    right: 50px;
+  }
+}

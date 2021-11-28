@@ -8,7 +8,7 @@ import Bar from './write/Bar'
 import Prev from './write/Prev'
 import './home.css'
 import Decrypt from './write/Decrypt'
-import img from '../coolplus.png'
+import img from '../images/coolplus.png'
 var CryptoJS = require("crypto-js")
 class Home extends Component {
     state = {
@@ -141,7 +141,7 @@ class Home extends Component {
         else {
             return (
                 <div><h1>Loading...
-            </h1>
+                </h1>
                     <img className='imglogo' src={img} alt="Time" /></div>)
         }
     }
