@@ -9,7 +9,6 @@
 }
 .Welcome {
   display: block;
-  width: fit-content;
   height: fit-content;
   background-color: rgba(245, 245, 220, 0.177);
   padding: 50px;
@@ -67,4 +66,7 @@
     bottom: 0px;
     right: 50px;
   }
+}
+.float-right {
+  float: right;
 }
