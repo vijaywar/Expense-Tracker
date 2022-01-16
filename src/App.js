@@ -9,7 +9,8 @@ import { Provider } from 'react-redux';
 import firebase from 'firebase/app'
 //import Login from './home/Login'
 import Home from './FrontEnd/Home'
-import { BrowserRouter as Router } from 'react-router-dom'
+import Dashboard from './FrontEnd/Dashboard/Dashboard';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 
 function App() {
@@ -29,9 +30,13 @@ function App() {
 
         <div className='body App-header'>
           <Router>
-            <Home />
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/Home">
+              <Dashboard />
+            </Route>
           </Router>
-
         </div>
       </ReactReduxFirebaseProvider>
     </Provider>

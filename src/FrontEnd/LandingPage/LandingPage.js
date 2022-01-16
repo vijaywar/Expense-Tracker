@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function LandingPage() {
     const [Time, setTime] = useState(0);
@@ -20,7 +21,7 @@ export default function LandingPage() {
                                     {Time.toString().slice(0, 8)}
                                 </div>
                                 <div className="text-center mt-2 pt-5">
-                                    <button class="btn btn-primary  btn-lg">Start Now</button>
+                                    <Link to="/Home" class="btn btn-primary  btn-lg">Start Now</Link>
                                 </div>
 
 

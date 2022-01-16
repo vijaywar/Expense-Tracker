@@ -1,0 +1,20 @@
+.navBar {
+  display: flex;
+
+  margin: auto;
+  padding-top: 20px;
+}
+.navBarItem {
+  margin: auto;
+  border: 1px solid rgba(245, 245, 245, 0.449);
+  border-radius: 12px;
+  padding: 5px;
+  transition-duration: 0.5s;
+  text-decoration: none;
+  color: aliceblue;
+}
+.navBarItem:hover {
+  background-color: rgb(11, 97, 255);
+  text-decoration: none;
+  color: aliceblue;
+}
