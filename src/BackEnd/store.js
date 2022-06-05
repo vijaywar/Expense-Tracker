@@ -10,13 +10,13 @@ import {
 import { firestoreReducer } from 'redux-firestore' // <- needed if using firestore
 
 const fbConfig = {
-    apiKey: "AIzaSyCAs-FvDr3jxuQVLZD1XLjeZFnyFf3L7Rs",
-    authDomain: "dear-diary-hi.firebaseapp.com",
-    projectId: "dear-diary-hi",
-    storageBucket: "dear-diary-hi.appspot.com",
-    messagingSenderId: "441916702122",
-    appId: "1:441916702122:web:8116ae9611328ab73c3fd3",
-    measurementId: "G-YNVSJ5PQWV"
+    apiKey: "AIzaSyAvRUnxdzYkWZpEGJLZhwNTA-D27xl5B2w",
+    authDomain: "homegymtnt.firebaseapp.com",
+    projectId: "homegymtnt",
+    storageBucket: "homegymtnt.appspot.com",
+    messagingSenderId: "775625685527",
+    appId: "1:775625685527:web:9a0e5699fbe9582aebfa52",
+    measurementId: "G-3XJD6B5CZH"
 }
 
 

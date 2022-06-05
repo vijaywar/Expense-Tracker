@@ -1,0 +1,17 @@
+p{
+    font-size: 14px;
+    margin: 1px;
+    padding: 2px;
+}
+
+.transactionCard{
+    margin: auto;
+    margin-bottom: 5px;
+ 
+}
+.transactionCard div{
+    padding: 5px;
+}
+.transactionCards{
+    margin:auto; 
+}

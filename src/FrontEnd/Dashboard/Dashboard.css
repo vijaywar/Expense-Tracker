@@ -1,0 +1,7 @@
+.gridOuter {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.girdD {
+  display: block;
+}
