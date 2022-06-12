@@ -4,11 +4,31 @@
   margin: auto;
   padding-top: 20px;
 }
+@media only screen and (max-width:600px){
+  .navBar {
+    display: flex;
+    margin: auto;
+    padding-top: 0px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 200; 
+    width: 100%;
+    background-color: rgb(30, 26, 33);
+    padding:3px;
+  }
+  .ProfileDetails{
+    position: fixed;
+    top:0px;
+    width: 100%;
+    z-index: 200;
+  }
+}
 .navBarItem {
   margin: auto;
   border: 1px solid rgba(245, 245, 245, 0.449);
   border-radius: 12px;
   padding: 5px;
+  padding:5px 9px;
   transition-duration: 0.5s;
   text-decoration: none;
   color: aliceblue;
@@ -22,3 +42,6 @@
 .ProfileDetails{
   background-color: rgb(1, 22, 40);
 }
+/*
+rgb(1, 22, 40)
+*/

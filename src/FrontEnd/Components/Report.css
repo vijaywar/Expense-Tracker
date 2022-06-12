@@ -11,7 +11,37 @@ p{
 }
 .transactionCard div{
     padding: 5px;
+    display: block;
 }
 .transactionCards{
-    margin:auto; 
+    margin:auto;   
+}
+.transactionCardBody{
+    margin-top: 58px;
+}
+
+.filterButton{
+    display: inline-block;
+    float:right;
+    width: 150px;
+
+}
+.detailsName{
+display: inline-block;
+}
+.deleteIcon{
+    float: right;
+    display: inline-block; 
+    color: wheat;
+}
+.deleteIcon:hover{
+    color: red;
+}
+.amountDisplay{
+    display: inline-block;
+}
+
+#DeleteconfirmPopup{
+    height: 100%;
+    
 }

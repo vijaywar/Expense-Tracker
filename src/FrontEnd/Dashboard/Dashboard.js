@@ -7,22 +7,28 @@ import { useFirestore } from 'react-redux-firebase';
 import Transactions from '../Components/Transactions';
 import Report from '../Components/Report';
 import { useState, useEffect } from 'react';
+import Charts from './Charts';
 export default function Dashboard(props) {
     const firebase = useFirestore()
     let [records, setRecords] = useState([{
         recordTime: '0',
         amount: '',
         fundsAction: '',
-        id: 0
+        id: 0,
+        uid: ''
     }])
+
     let loadData = () => {
+        console.log("Called outside")
         if (records.length === 1) {
             console.log("Called inside")
             firebase.collection("Data").doc(props.userDetails.uid).collection("TradeData").get()
                 .then(i => {
                     records.pop();
                     i.docs.forEach(doc => {
-                        records.push(doc.data());
+                        let reco = doc.data();
+                        reco.uid = doc.id;
+                        records.push(reco);
 
                     });
                     setRecords(records.slice());
@@ -31,6 +37,19 @@ export default function Dashboard(props) {
 
         }
     }
+    let refreshDat = () => {
+        records = []
+        firebase.collection("Data").doc(props.userDetails.uid).collection("TradeData").get()
+            .then(i => {
+                records.pop();
+                i.docs.forEach(doc => {
+                    records.push(doc.data());
+
+                });
+                setRecords(records.slice());
+                console.log(records); console.log("get data above")
+            })
+    }
     useEffect(() => { loadData() }, [])
     return (
         <div>
@@ -38,10 +57,10 @@ export default function Dashboard(props) {
             <NavBar userDetails={props.userDetails} />
             <div className='gymBoard'>
                 <Route exact path='/dashboard/Trade'>
-                    <Transactions userDetails={props.userDetails} records={records} />
+                    <Transactions userDetails={props.userDetails} records={records} refresh={refreshDat} />
                 </Route>
                 <Route exact path='/dashboard/Report'>
-                    <Report records={records} />
+                    <Report records={records} userDetails={props.userDetails} refresh={refreshDat} />
                 </Route>
                 <Route path='/dashboard/Explore'>
                     <div>
@@ -49,6 +68,7 @@ export default function Dashboard(props) {
                     </div>
                 </Route>
             </div>
+            <Charts />
         </div>
     )
 }

@@ -1,0 +1,15 @@
+.cricle{
+    display: block;
+    border-radius: 100%;
+    background-color: rgb(27, 27, 131);
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+.outerCircle{
+    display: block;
+    border-radius: 100%;
+    background-color: rgb(63, 63, 188);
+    width: 150px;
+    height: 150px;
+}
