@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PiChart from '../Components/PiChart'
 export default function Charts() {
-    let recordPi = useState([{ name: 'expense', amount: 40 }, { name: 'income', amount: 60 }])
+    let recordPi = useState({ income: 40, expense: 60 })//useState([{ name: 'expense', amount: 40 }, { name: 'income', amount: 60 }])
     return (
         <div className='mt-5 text-white'>
             <div className='card mt-2'>

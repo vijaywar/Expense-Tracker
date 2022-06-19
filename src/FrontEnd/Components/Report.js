@@ -19,18 +19,19 @@ export default function Report(props) {
         uid: ''
     })
     let getData = () => {
-        console.log(props.records)
         let recordsOrder = props.records.slice();
         recordsOrder = recordsOrder.sort((a, b) => new Date(a.recordTime) - new Date(b.recordTime))
 
+        console.log(recordsOrder, props.records)
         for (let i of recordsOrder) {
 
             console.log("sorted aray is:" + i.recordTime)
         }
         setRecords(recordsOrder);
     }
-    let deleteRecordModel = (id) => {
+    let deleteRecordModel = (e, id) => {
         deleteRecordState = records.filter(i => i.uid === id)[0];
+        console.log(records, id, deleteRecordState)
         setDeleteRecords(deleteRecordState);
         document.getElementById("DeletemodelOPen").click();
     }
@@ -104,14 +105,14 @@ export default function Report(props) {
                         i.fundsAction === "W" ?
                             <div className="card bg-dark" key={i.id}>
                                 <p className="amountDisplay">Amount: <span className="text-warning">-{i.amount}</span></p>
-                                <p onClick={(event) => deleteRecordModel(i.uid)} className='deleteIcon'><i class="fa fa-trash" aria-hidden="true"></i></p>
+                                <p onClick={(event) => deleteRecordModel(event, i.uid)} className='deleteIcon'><i class="fa fa-trash" aria-hidden="true"></i></p>
                                 <p className="text-warning">Expense</p>
                                 <p >{new Date(i.recordTime).toLocaleString()}</p>
                             </div>
                             :
                             <div className="card bg-dark" key={i.id}>
                                 <p className="amountDisplay">Amount: <span className="text-success">+{i.amount}</span></p>
-                                <p onClick={(event) => deleteRecordModel(i.uid)} className='deleteIcon'><i class="fa fa-trash" aria-hidden="true"></i></p>
+                                <p onClick={(event) => deleteRecordModel(event, i.uid)} className='deleteIcon'><i class="fa fa-trash" aria-hidden="true"></i></p>
                                 <p className="text-success">Income</p>
                                 <p>{new Date(i.recordTime).toLocaleString()}</p>
                             </div>

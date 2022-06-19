@@ -29,6 +29,7 @@ export default function Dashboard(props) {
                         let reco = doc.data();
                         reco.uid = doc.id;
                         records.push(reco);
+                        console.log(reco);
 
                     });
                     setRecords(records.slice());
