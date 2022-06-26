@@ -42,6 +42,17 @@
 .ProfileDetails{
   background-color: rgb(1, 22, 40);
 }
+.VuserName{
+  width: 180px;
+  height: 33px;display: block;
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+}
+.Vlogout{
+  height: 33px;
+  
+}
 /*
 rgb(1, 22, 40)
 */

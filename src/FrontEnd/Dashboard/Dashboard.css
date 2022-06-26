@@ -5,3 +5,16 @@
 .girdD {
   display: block;
 }
+.gymBoard{
+  padding-top: 53px;
+  background-color: darkslategrey;
+}
+.bg-vdark{
+  background-color: rgb(1, 22, 40);
+}
+.filterChartButton{
+  display: inline-block;
+  width: 140px;
+  float: right;
+  padding:0px 5px;
+}

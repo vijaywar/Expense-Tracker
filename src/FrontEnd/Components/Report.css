@@ -17,17 +17,21 @@ p{
     margin:auto;   
 }
 .transactionCardBody{
-    margin-top: 58px;
+    /* margin-top: 58px; */
+    padding:2px 5px;
+    margin:0px;
 }
 
 .filterButton{
     display: inline-block;
     float:right;
-    width: 150px;
-
+    width: 120px;
+    padding: 0px 5px;
+    margin-right: 5px;
 }
 .detailsName{
 display: inline-block;
+margin-left: 10px;
 }
 .deleteIcon{
     float: right;
@@ -47,4 +51,9 @@ display: inline-block;
 }
 .hide{
     display: none;
+}
+.maxsize90p{
+    display: block;
+    height: 80vh;
+    overflow: scroll;
 }

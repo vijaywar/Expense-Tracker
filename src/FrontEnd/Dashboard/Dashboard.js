@@ -29,7 +29,7 @@ export default function Dashboard(props) {
                         let reco = doc.data();
                         reco.uid = doc.id;
                         records.push(reco);
-                        console.log(reco);
+                        // console.log(reco);
 
                     });
                     setRecords(records.slice());
@@ -44,11 +44,13 @@ export default function Dashboard(props) {
             .then(i => {
                 records.pop();
                 i.docs.forEach(doc => {
-                    records.push(doc.data());
+                    let reco = doc.data();
+                    reco.uid = doc.id;
+                    records.push(reco);
 
                 });
                 setRecords(records.slice());
-                console.log(records); console.log("get data above")
+                // console.log(records); console.log("get data above")
             })
     }
     useEffect(() => { loadData() }, [])
@@ -57,6 +59,9 @@ export default function Dashboard(props) {
 
             <NavBar userDetails={props.userDetails} />
             <div className='gymBoard'>
+                <Route exact path='/dashboard/'>
+                    <Charts records={records} />
+                </Route>
                 <Route exact path='/dashboard/Trade'>
                     <Transactions userDetails={props.userDetails} records={records} refresh={refreshDat} />
                 </Route>
@@ -69,7 +74,6 @@ export default function Dashboard(props) {
                     </div>
                 </Route>
             </div>
-            <Charts />
         </div>
     )
 }

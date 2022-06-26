@@ -13,19 +13,29 @@
     width: 150px;
     height: 150px;
 }
+.detailsCD{
+  border-radius: 5px;
+    position: relative;
+    background-color: rgb(22, 16, 71);
+    width: 300px;
+    margin: auto;
+    padding: 5px;  margin-top: 5px;
+    text-align: center;
+}
 
 .vcard {
     display: block;
     padding: 50px;
     width: 300px;
     margin: auto;
-    margin-top: 50px;
+   
     filter: drop-shadow(8px 8px 10px gray);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.212);
     border-radius: 5px;
     position: relative;
     background-color: rgb(22, 16, 71);
   }
+
   .circleO {
     display: block;
     width: 200px;
@@ -102,4 +112,54 @@ to{
     width: 10px;
     height: 10px;
     background-color: teal;
+  }
+
+  .incomeVD{
+    color: green;
+    margin-left: 0px;
+    width: 140px;
+    display: inline-block;
+  }
+  .text-green{color:green; ;}
+  .expenseVD{
+    color: rgb(255, 166, 0);
+    word-break: keep-all;
+    width: 140px;
+    display: inline-block;
+  
+  }
+  .savingVD{
+    margin: auto;
+color: rgba(240, 248, 255, 0.543);
+  }
+  .incomePercent{
+    color: aqua;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+  }
+  @media screen and (max-width:400px){
+    .picharCard .card-body{
+      padding:0px !important;
+    }
+  }
+
+  .piAddNew{
+    display: block;
+    width: 70px;
+    height: 70px; text-align: center;
+    padding-top: 20px;
+    border-radius: 100%;
+    background-color: cadetblue;
+    position: absolute;
+    top: 50%;left: 50%;
+    transform: translate(-50%,-50%);
+z-index: 2000;
+text-decoration: none;
+color: aliceblue;
+  }
+  .piAddNew:hover{
+    background-color: aqua;
   }

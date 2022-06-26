@@ -31,7 +31,7 @@ export default function Report(props) {
     }
     let deleteRecordModel = (e, id) => {
         deleteRecordState = records.filter(i => i.uid === id)[0];
-        console.log(records, id, deleteRecordState)
+        console.log("records", records, "id", id, deleteRecordState)
         setDeleteRecords(deleteRecordState);
         document.getElementById("DeletemodelOPen").click();
     }
@@ -40,13 +40,14 @@ export default function Report(props) {
         firebase.collection('Data').doc(props.userDetails.uid).collection("TradeData").doc(deleteRecordState.uid).delete().then(props.refresh());
     }
 
-
+    let [filterCode, setfilterCode] = useState(4);
     useEffect(() => { getData() }, [props.records])
     let filter = () => {
         let recordsOrder = props.records.slice();
         recordsOrder = recordsOrder.sort((a, b) => new Date(a.recordTime) - new Date(b.recordTime))
         var fitlerdata = document.getElementById('filterValue').value;
         let deadlineTIme = new Date();
+        setfilterCode(parseInt(fitlerdata))
         switch (fitlerdata) {
             case "0":
                 recordsOrder = recordsOrder.filter(i => new Date(i.recordTime).toLocaleDateString() === new Date().toLocaleDateString())
@@ -90,8 +91,8 @@ export default function Report(props) {
         <div>
             <div className='m-1 m-md-5  card bg-secondary transactionCards'>
                 <div className='card-header transactionCardBody'>
-                    <h1 className='detailsName'>Details</h1>
-                    <select id='filterValue' onChange={filter} className="form-select filterButton" aria-label="Default select example">
+                    <span className='detailsName'>Details</span>
+                    <select id='filterValue' value={filterCode} onChange={filter} className="form-select filterButton" aria-label="Default select example">
                         <option value="0" >Today</option>
                         <option value="1">This Week</option>
                         <option value="2">Last Week</option>
@@ -100,8 +101,8 @@ export default function Report(props) {
                         <option value="5">Custom</option>
                     </select>
                 </div>
-                <div className="card-body mb-5 pb-3 ">
-                    {records ? records.map(i => <div className='transactionCard'> {
+                <div className="card-body mb-5 pb-3 maxsize90p ">
+                    {records ? records.map(i => <div key={i.uid} className='transactionCard'> {
                         i.fundsAction === "W" ?
                             <div className="card bg-dark" key={i.id}>
                                 <p className="amountDisplay">Amount: <span className="text-warning">-{i.amount}</span></p>

@@ -4,3 +4,11 @@
 .inlineblock{
     display: inline-block;
 }
+
+.vfadeText{
+    opacity: .5;
+}
+.marginTopMobile{
+    /* margin-top: 57px !important; */
+    
+}

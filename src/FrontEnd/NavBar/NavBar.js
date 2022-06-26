@@ -20,8 +20,8 @@ export default function NavBar(props) {
 
         < div >
             <div className='gridOuter ProfileDetails' >
-               <div className='gridD'><p className='bg-secondary p-2 m-2  inlineblock'><i class="fa fa-user" aria-hidden="true"></i> {props.userDetails.displayName}</p> </div>
-                <div className='gridD' > <button className='btn-secondary m-2 text14 p-2 float-right' onClick={logout} >Lotout <i class="fa fa-sign-out" aria-hidden="true"></i></button> </div>
+               <div className='gridD'><p className='bg-secondary p-2 m-2  inlineblock VuserName'><i class="fa fa-user" aria-hidden="true"></i> {props.userDetails.displayName}</p> </div>
+                <div className='gridD' > <button className='btn-secondary m-2 text14 p-1 float-right Vlogout' onClick={logout} >Logout <i class="fa fa-sign-out" aria-hidden="true"></i></button> </div>
             </div>
             <div className="navBar">
             <Link to='/dashboard/Trade' className="navBarItem"><i class="fa fa-plus" aria-hidden="true"></i> Add</Link>
